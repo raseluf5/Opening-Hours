@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Rasel_OpeningHours::openinghourapi" title="Opening Hour Api"
+                          translate="title" sortOrder="120">
+                    <resource id="Rasel_OpeningHours::opening_hours" title="Get Opening Hour"
+                              translate="title" sortOrder="10" />
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

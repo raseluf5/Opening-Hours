@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>General</label>
+            <tab>general</tab>
+            <group id="opening_hours" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Opening Hours</label>
+                <field id="monday" translate="label" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Monday</label>
+                    <frontend_model>Rasel\OpeningHours\Block\Adminhtml\Menu\Field\Monday</frontend_model>
+                    <backend_model>Rasel\OpeningHours\Block\Adminhtml\Menu\Config\Backend\AdditionalItem</backend_model>
+                </field>
+                <field id="tuesday" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tuesday</label>
+                    <frontend_model>Rasel\OpeningHours\Block\Adminhtml\Menu\Field\Tuesday</frontend_model>
+                    <backend_model>Rasel\OpeningHours\Block\Adminhtml\Menu\Config\Backend\AdditionalItem</backend_model>
+                </field>
+                <field id="wednesday" translate="label" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wednesday</label>
+                    <frontend_model>Rasel\OpeningHours\Block\Adminhtml\Menu\Field\Wednesday</frontend_model>
+                    <backend_model>Rasel\OpeningHours\Block\Adminhtml\Menu\Config\Backend\AdditionalItem</backend_model>
+                </field>
+                <field id="thursday" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Thursday</label>
+                    <frontend_model>Rasel\OpeningHours\Block\Adminhtml\Menu\Field\Thursday</frontend_model>
+                    <backend_model>Rasel\OpeningHours\Block\Adminhtml\Menu\Config\Backend\AdditionalItem</backend_model>
+                </field>
+                <field id="friday" translate="label" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Friday</label>
+                    <frontend_model>Rasel\OpeningHours\Block\Adminhtml\Menu\Field\Friday</frontend_model>
+                    <backend_model>Rasel\OpeningHours\Block\Adminhtml\Menu\Config\Backend\AdditionalItem</backend_model>
+                </field>
+                <field id="saturday" translate="label" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Saturday</label>
+                    <frontend_model>Rasel\OpeningHours\Block\Adminhtml\Menu\Field\Saturday</frontend_model>
+                    <backend_model>Rasel\OpeningHours\Block\Adminhtml\Menu\Config\Backend\AdditionalItem</backend_model>
+                </field>
+                <field id="sunday" translate="label" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sunday</label>
+                    <frontend_model>Rasel\OpeningHours\Block\Adminhtml\Menu\Field\Sunday</frontend_model>
+                    <backend_model>Rasel\OpeningHours\Block\Adminhtml\Menu\Config\Backend\AdditionalItem</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

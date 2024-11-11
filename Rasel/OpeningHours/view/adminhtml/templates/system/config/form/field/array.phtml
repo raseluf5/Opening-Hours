@@ -1,0 +1,58 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$_htmlId = $block->getHtmlId() ? $block->getHtmlId() : '_' . uniqid();
+$_colspan = $block->isAddAfter() ? 2 : 1;
+
+$curren_time = strtotime(date('m/d/Y h:i:s a', time()));
+?>
+
+<div class="design_theme_ua_regexp" id="grid<?= $block->escapeHtmlAttr($_htmlId) ?>">
+    <div class="admin__control-table-wrapper">
+        <table class="admin__control-table" id="<?= $block->escapeHtmlAttr($block->getElement()->getId()) ?>">
+            <thead>
+            <tr>
+                <?php foreach ($block->getColumns() as $columnName => $column) : ?>
+                    <th><?= $block->escapeHtml($column['label']) ?></th>
+                <?php endforeach; ?>
+            </tr>
+            </thead>
+            <tbody id="addRow<?= $block->escapeHtmlAttr($_htmlId) ?>">
+                <?php
+                    if(empty($block->getArrayRows())){ ?>
+                       <tr id="_<?= $curren_time ?>">
+                            <td>
+                                <input type="text" id="_<?= $curren_time ?>_monday_open" name="groups[opening_hours][fields][monday][value][_<?= $curren_time ?>][monday_open]" value="" size="300px" class="required-entry">
+                            </td>
+                            <td>
+                                <input type="text" id="_<?= $curren_time ?>_monday_close" name="groups[opening_hours][fields][monday][value][_<?= $curren_time ?>][monday_close]" value="" size="300px" class="required-entry">
+                            </td>
+                        </tr> 
+                    <?php }else{
+                        foreach($block->getArrayRows() as $_rowId => $_row) { ?>
+                            <tr id="<?= $block->escapeHtmlAttr($_htmlId) ?>">
+                                <td>
+                                    <input type="text" id="<?= $block->escapeHtmlAttr($_row['_id']) ?>" name="groups[opening_hours][fields][monday][value][<?= $block->escapeHtmlAttr($_row['_id']) ?>][monday_open]" value="<?= $block->escapeHtmlAttr($_row['monday_open']) ?>" size="300px" class="required-entry">
+                                </td>
+                                <td>
+                                    <input type="text" id="<?= $block->escapeHtmlAttr($_row['_id']) ?>" name="groups[opening_hours][fields][monday][value][<?= $block->escapeHtmlAttr($_row['_id']) ?>][monday_close]" value="<?= $block->escapeHtmlAttr($_row['monday_close']) ?>" size="300px" class="required-entry">
+                                </td>
+                            </tr>
+                        <?php } 
+                    }
+                ?>
+                
+            </tbody>
+
+        </table>
+    </div>
+    <input type="hidden" name="<?= $block->escapeHtmlAttr($block->getElement()->getName()) ?>[__empty]" value="" />
+
+
+    
+</div>
